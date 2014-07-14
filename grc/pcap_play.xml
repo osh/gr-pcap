@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<block>
+  <name>Pcap Play</name>
+  <key>pcap_play</key>
+  <category>pcap</category>
+  <import>import pcap</import>
+  <make>pcap.play($f, $s)</make>
+
+  <param>
+    <name>Filename</name>
+    <key>f</key>
+    <value>/tmp/tmp.pcap</value>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Timescale</name>
+    <key>s</key>
+    <value>1.0</value>
+    <type>float</type>
+  </param>
+
+  <source>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

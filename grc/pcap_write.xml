@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<block>
+  <name>Pcap Write</name>
+  <key>pcap_write</key>
+  <category>pcap</category>
+  <import>import pcap</import>
+  <make>pcap.write($f)</make>
+
+  <param>
+    <name>Filename</name>
+    <key>f</key>
+    <value>/tmp/gnuradio.pcap</value>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+</block>

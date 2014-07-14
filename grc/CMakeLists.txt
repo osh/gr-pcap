@@ -18,7 +18,7 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    pcap_play
-    pcap_write
+    pcap_play.xml
+    pcap_write.xml
     DESTINATION share/gnuradio/grc/blocks
 )

@@ -4,12 +4,12 @@
   <key>pcap_play</key>
   <category>pcap</category>
   <import>import pcap</import>
-  <make>pcap.play($f, $s)</make>
+  <make>pcap.pcap_play($f, $s)</make>
 
   <param>
     <name>Filename</name>
     <key>f</key>
-    <value>/tmp/tmp.pcap</value>
+    <value>/tmp/gnuradio.pcap</value>
     <type>string</type>
   </param>
 
@@ -25,4 +25,11 @@
     <type>message</type>
     <optional>1</optional>
   </source>
+
+  <doc>
+    This block plays pcap files back into a GNU Radio graph
+    timing from the pcap headers is respected, 
+    the timescale is a multiplier for the timing used durring playback, i.e.
+    1.0 = realtime, 0.5 = 2x realtime, etc
+  </doc>
 </block>

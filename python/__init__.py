@@ -42,9 +42,9 @@ if _RTLD_GLOBAL != 0:
 
 
 # import swig generated symbols into the pcap namespace
-from pcap_swig import *
-from pcap_play import play
-from pcap_write import write
+#from pcap_swig import *
+from pcap_play import pcap_play
+from pcap_write import pcap_write
 
 # import any pure python here
 #

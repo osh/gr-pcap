@@ -4,7 +4,7 @@
   <key>pcap_write</key>
   <category>pcap</category>
   <import>import pcap</import>
-  <make>pcap.write($f)</make>
+  <make>pcap.pcap_write($f)</make>
 
   <param>
     <name>Filename</name>
@@ -18,4 +18,8 @@
     <type>message</type>
     <optional>1</optional>
   </sink>
+
+  <doc>
+    This program provides a way to write GNU Radio message ports to a pcap file to assist in debugging wireless communications links
+  </doc>
 </block>

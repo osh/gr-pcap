@@ -4,7 +4,7 @@ from gnuradio import gr;
 import pmt, time, numpy, threading
 from scapy.utils import PcapReader
 
-class play(gr.sync_block):
+class pcap_play(gr.sync_block):
     def __init__(self,f, time_scale=1.0):
         gr.sync_block.__init__(self,"pcap_play",[],[])
         self.message_port_register_out(pmt.intern("pdus"));

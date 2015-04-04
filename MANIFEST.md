@@ -12,5 +12,5 @@ dependencies:
   - python-scapy
 repo: https://github.com/osh/gr-pcap.git
 stable_release: HEAD
-icon: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogecoin_-_offical_logo.png/220px-Dogecoin_-_offical_logo.png
+icon: http://a5.mzstatic.com/us/r30/Purple/v4/ce/de/22/cede224b-4fed-2af1-e203-ed6b3f381d24/icon175x175.png
 ---

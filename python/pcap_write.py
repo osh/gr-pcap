@@ -18,10 +18,11 @@ class pcap_write(gr.sync_block):
     def stop(self):
         pass
    
-    def handler(self, msg):
-        ba = bitarray.bitarray();          
-        s = array.array('B', pmt.u8vector_elements(pmt.cdr(msg))).tostring()
-        z = l2.Ether(s)
+    def handler(self, pdu):
+        ba = bitarray.bitarray();
+        meta = pmt.car(pdu)
+        x = pmt.to_python(pmt.cdr(pdu))
+        z = l2.Ether(x.tostring())
         self.pcap.write(z);
     
     def work(self, input_items, output_items):

@@ -22,7 +22,7 @@ class pcap_write(gr.sync_block):
         ba = bitarray.bitarray();
         meta = pmt.car(pdu)
         x = pmt.to_python(pmt.cdr(pdu))
-        z = l2.Ether(x.tostring())
+        z = l2.Raw(x.tostring())
         self.pcap.write(z);
     
     def work(self, input_items, output_items):

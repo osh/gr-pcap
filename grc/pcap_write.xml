@@ -4,13 +4,28 @@
   <key>pcap_write</key>
   <category>pcap</category>
   <import>import pcap</import>
-  <make>pcap.pcap_write($f)</make>
+  <make>pcap.pcap_write($f, $append)</make>
 
   <param>
     <name>Filename</name>
     <key>f</key>
     <value>/tmp/gnuradio.pcap</value>
     <type>string</type>
+  </param>
+
+  <param>
+    <name>Append or Overwrite File</name>
+    <key>append</key>
+    <value>True</value>
+    <type>enum</type>
+    <option>
+        <name>Append</name>
+        <key>True</key>
+    </option>
+    <option>
+        <name>Overwrite</name>
+        <key>False</key>
+    </option>
   </param>
 
   <sink>

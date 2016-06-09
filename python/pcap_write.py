@@ -6,14 +6,15 @@ from scapy.layers import l2
 import pmt, sys, bitarray, array
 
 class pcap_write(gr.sync_block):
-    def __init__(self,f):
+    def __init__(self,f,append=True):
         gr.sync_block.__init__(self,"pcap_write",[],[])
         self.message_port_register_in(pmt.intern("pdus"));
         self.set_msg_handler(pmt.intern("pdus"), self.handler);
         self.f = f
+        self.append = append
 
     def start(self):
-        self.pcap = PcapWriter(self.f, append=True, sync=True)   
+        self.pcap = PcapWriter(self.f, append=self.append, sync=True)   
 
     def stop(self):
         pass

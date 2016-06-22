@@ -3,7 +3,7 @@
 from gnuradio import gr;
 from scapy.utils import PcapWriter
 from scapy.layers import l2
-import pmt, sys, bitarray, array
+import pmt
 
 class pcap_write(gr.sync_block):
     def __init__(self,f,append=True):
@@ -20,10 +20,11 @@ class pcap_write(gr.sync_block):
         pass
    
     def handler(self, pdu):
-        ba = bitarray.bitarray();
-        meta = pmt.car(pdu)
+        meta = pmt.to_python(pmt.car(pdu))
         x = pmt.to_python(pmt.cdr(pdu))
         z = l2.Raw(x.tostring())
+        if(meta.has_key("timestamp")):
+            z.time = meta["timestamp"]
         self.pcap.write(z);
     
     def work(self, input_items, output_items):

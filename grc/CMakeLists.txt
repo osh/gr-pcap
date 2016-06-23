@@ -20,5 +20,6 @@
 install(FILES
     pcap_play.xml
     pcap_write.xml
+    pcap_range_source.xml
     DESTINATION share/gnuradio/grc/blocks
 )

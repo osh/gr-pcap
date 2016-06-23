@@ -32,6 +32,7 @@ GR_PYTHON_INSTALL(
     FILES
     pcap_play.py
     pcap_write.py
+    pcap_range_source.py
     __init__.py
     DESTINATION ${GR_PYTHON_DIR}/pcap
 )

@@ -45,6 +45,7 @@ if _RTLD_GLOBAL != 0:
 #from pcap_swig import *
 from pcap_play import pcap_play
 from pcap_write import pcap_write
+from pcap_range_source import pcap_range_source
 
 # import any pure python here
 #

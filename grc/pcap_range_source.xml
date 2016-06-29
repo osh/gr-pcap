@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>Pcap Range Source</name>
+  <key>pcap_range_source</key>
+  <category>pcap</category>
+  <import>import pcap</import>
+  <make>pcap.pcap_range_source($f,$fs)</make>
+
+  <param>
+    <name>Filename</name>
+    <key>f</key>
+    <value>/tmp/gnuradio.pcap</value>
+    <type>string</type>
+  </param>
+  
+  <param>
+    <name>Sample Rate (Hz)</name>
+    <key>fs</key>
+    <value>50e3</value>
+    <type>real</type>
+  </param>
+
+  <sink>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <source>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

@@ -24,7 +24,12 @@ class pcap_write(gr.sync_block):
         x = pmt.to_python(pmt.cdr(pdu))
         z = l2.Raw(x.tostring())
         if(meta.has_key("timestamp")):
-            z.time = meta["timestamp"]
+            t = meta['timestamp']
+            if( type(t) == tuple ):
+                t = t[0]+t[1]
+            else :
+                t = t
+            z.time = t
         self.pcap.write(z);
     
     def work(self, input_items, output_items):
